@@ -1,0 +1,19 @@
+/* Color and text alignment */
+
+h1 {
+	background-color: rgb(168, 255, 255);
+	padding: 40px;
+	text-align: center;
+	font-weight: bold;
+	font-family: "Times New Roman", Times, serif;
+}
+
+body {
+	background-color: rgb(255, 143, 143);
+}
+
+p {
+	background-color: #fbf8ac;
+	font-weight: bold;
+	text-decoration: underline;
+}
