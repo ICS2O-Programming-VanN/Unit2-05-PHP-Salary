@@ -27,7 +27,7 @@
       define ("TAX_RATE", 0.1805); // constant
 			if(isset($_POST['submit'])) {	// if submit pressed
         // Variables
-        $hours = floatval($_POST["hours"]);
+        $hours = floatval($_POST["hours"]); // takes user input and converts to float
         $rate = floatval($_POST["rate"]);
         $salary = $hours * $rate;
         $salarytaxed = number_format($salary * TAX_RATE, 2); // rounds to 2nd decimal place
