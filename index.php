@@ -31,9 +31,11 @@
         $rate = floatval($_POST["rate"]);
         $salary = $hours * $rate;
         $salarytaxed = number_format($salary * TAX_RATE, 2); // rounds to 2nd decimal place
+        $realsalary = $salary - $salarytaxed;
         $salary = number_format($salary, 2); // number_format() after $salarytaxed to ensure calculations run smoothly
+        $realsalary = number_format($realsalary, 2);
         // Output
-				echo "<br><br><h3>Your salary is $" . $salary . " <br> The government will be taking $" . $salarytaxed . " as income tax.</h3>";   
+				echo "<br><br><h3>Your salary is $" . $salary . " <br> The government will be taking $" . $salarytaxed . " as income tax.<br> With your income tax deducted from your salary, you will be keeping $" . $realsalary . "</h3>";   
 			}
 		?>
   </body>
