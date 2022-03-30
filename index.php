@@ -27,12 +27,11 @@
       define ("TAX_RATE", 0.1805); // constant
 			if(isset($_POST['submit'])) {	// if submit pressed
         // Variables
-        $hours = $_POST['hours'];
-				$rate = $_POST['rate'];
-        $salary = $hours*$rate;
-				$salary = number_format($salary, 2);        
-        $salarytaxed = $salary*TAX_RATE;
-        $salarytaxed = number_format($salarytaxed, 2);
+        $hours = floatval($_POST["hours"]);
+        $rate = floatval($_POST["rate"]);
+        $salary = $hours * $rate;
+        $salarytaxed = number_format($salary * TAX_RATE, 2); // rounds to 2nd decimal place
+        $salary = number_format($salary, 2); // number_format() after $salarytaxed to ensure calculations run smoothly
         // Output
 				echo "<br><br><h3>Your salary is $" . $salary . " <br> The government will be taking $" . $salarytaxed . " as income tax.</h3>";   
 			}
